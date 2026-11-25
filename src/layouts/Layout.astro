@@ -1,0 +1,44 @@
+---
+import "../styles/global.css";
+import { withBase } from "../lib/paths";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Xia Dynasty 的游戏作品集：下载与演示。" } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, "");
+const home = withBase("").replace(/\/$/, "");
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={withBase("favicon.svg")} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href={withBase()}>Xia Dynasty</a>
+        <nav class="nav" aria-label="主导航">
+          <a href={withBase()} aria-current={path === home ? "page" : undefined}>作品</a>
+          <a href={withBase("about")} aria-current={path.endsWith("/about") ? "page" : undefined}>关于</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <slot />
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">Xia Dynasty · 游戏学习与独立作品</div>
+    </footer>
+  </body>
+</html>

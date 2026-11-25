@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#2a2218"/>
+      <stop offset="1" stop-color="#4a3a22"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <ellipse cx="900" cy="420" rx="220" ry="140" fill="#d4a017" opacity="0.25"/>
+  <text x="120" y="300" fill="#ece6da" font-size="96" font-family="Segoe UI, sans-serif" font-weight="700">Slim</text>
+  <text x="120" y="370" fill="#c4b49a" font-size="28" font-family="Segoe UI, sans-serif">Desk_Slim · 占位封面 · 请替换为游戏截图</text>
+</svg>

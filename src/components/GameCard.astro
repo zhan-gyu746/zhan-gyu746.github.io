@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { withBase } from "../lib/paths";
+
+interface Props {
+  game: CollectionEntry<"games">;
+}
+
+const { game } = Astro.props;
+const { title, genre, year, platforms, cover } = game.data;
+---
+
+<a class="card" href={withBase(`games/${game.id}`)}>
+  <img src={withBase(cover)} alt={`${title} 封面`} />
+  <div class="card-body">
+    <h2>{title}</h2>
+    <p class="meta">
+      <span class="chip">{genre}</span>
+      <span class="chip">{year}</span>
+      {platforms.map((p) => <span class="chip">{p}</span>)}
+    </p>
+  </div>
+</a>

@@ -1,0 +1,21 @@
+---
+interface Props {
+  bvid: string;
+}
+
+const { bvid } = Astro.props;
+const id = bvid.trim();
+---
+
+{
+  id ? (
+    <div class="video-frame">
+      <iframe
+        src={`https://player.bilibili.com/player.html?bvid=${id}&page=1&high_quality=1`}
+        title="Bilibili 演示视频"
+        scrolling="no"
+        allowfullscreen
+      />
+    </div>
+  ) : null
+}

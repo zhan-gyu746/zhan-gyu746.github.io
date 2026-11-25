@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import GameCard from "../components/GameCard.astro";
+import { getCollection } from "astro:content";
+
+const games = (await getCollection("games")).sort((a, b) => b.data.year - a.data.year);
+---
+
+<Layout title="Xia Dynasty · 游戏作品集">
+  <section class="hero">
+    <h1>Xia Dynasty</h1>
+    <p>
+      独立游戏学习与作品存档。这里列出目前公开的两款游戏，演示视频来自 B 站，安装包通过 GitHub Releases 提供。
+    </p>
+  </section>
+
+  <h2 class="section-title">游戏</h2>
+  <div class="grid">
+    {games.map((game) => <GameCard game={game} />)}
+  </div>
+</Layout>

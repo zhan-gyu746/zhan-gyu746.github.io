@@ -1,0 +1,33 @@
+---
+interface Download {
+  label: string;
+  version?: string;
+  size?: string;
+  url?: string;
+}
+
+interface Props {
+  items: Download[];
+}
+
+const { items } = Astro.props;
+const ready = items.filter((item) => item.url && item.url.trim().length > 0);
+---
+
+{
+  ready.length === 0 ? (
+    <p class="note">构建包尚未发布。发布后会在 GitHub Releases 提供下载。</p>
+  ) : (
+    <div class="downloads">
+      {ready.map((item) => {
+        const bits = [item.version, item.size].filter(Boolean).join(" · ");
+        return (
+          <a class="download-btn" href={item.url}>
+            <span>下载 {item.label}</span>
+            {bits ? <small>{bits}</small> : null}
+          </a>
+        );
+      })}
+    </div>
+  )
+}

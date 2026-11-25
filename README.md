@@ -1,6 +1,6 @@
 # Xia Dynasty 游戏作品集
 
-静态站点（Astro），展示 [Game_demo](https://github.com/zhan-gyu746/Game_demo) 里的原创游戏。上线地址：<https://zhan-gyu746.github.io/github.io/>
+静态站点（Astro），展示 [Game_demo](https://github.com/zhan-gyu746/Game_demo) 里的原创游戏。上线地址：<https://zhan-gyu746.github.io/>
 
 演示视频嵌 B 站；安装包请放到 **Game_demo 的 GitHub Releases**，不要提交进本仓库。
 
@@ -17,10 +17,10 @@ npm run dev
 
 ## 部署
 
-1. 仓库为 [zhan-gyu746/github.io](https://github.com/zhan-gyu746/github.io)（项目站，路径带 `/github.io/`）。
+1. 仓库为 [zhan-gyu746/zhan-gyu746.github.io](https://github.com/zhan-gyu746/zhan-gyu746.github.io)（用户站，根路径）。
 2. 把本目录推到该仓库的 `main` 分支。
 3. 仓库 Settings → Pages → Build and deployment → Source 选 **GitHub Actions**。
-4. 等待 Actions 成功后访问 <https://zhan-gyu746.github.io/github.io/>。
+4. 等待 Actions 成功后访问 <https://zhan-gyu746.github.io/>。
 
 ## 加一款新游戏
 
